@@ -1,0 +1,411 @@
+:root {
+  --bg-100: #fff;
+  --bg-200: #ddd;
+  --bg-900: #111;
+  --bg-blue-100: rgb(198, 227, 238);
+  --bg-blue-900: rgb(19, 18, 73);
+
+  --side-margin: 25%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+}
+
+h2 {
+  font-size: 2.4rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+
+p {
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  word-spacing: 0.1em;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Header and navbar */
+header {
+  position: fixed;
+  background-color: var(--bg-100);
+  top: 0;
+  width: 100%;
+  box-shadow: 0 -7px 20px 10px #0002;
+  z-index: 1;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+}
+
+nav h3 {
+  font-size: 1.5rem;
+  font-weight: 200;
+  margin: 0;
+}
+
+nav p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+}
+
+nav li {
+  margin-right: 1em;
+}
+
+
+/* Hover animation */
+nav a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
+  border-bottom: 2px solid black;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 200ms ease-in;
+}
+
+nav a:hover::after,
+nav a:focus::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* anchor to Linkedin */
+.linkedin-link {
+  font-size: 2rem;
+}
+
+.linkedin-link::after {
+  border: none;
+}
+
+/* Resume button is styled differently than the rest */
+.resume-button {
+  border-radius: 100vw;
+  border: 2px solid black;
+  padding: 0.5em;
+  z-index: 1;
+}
+
+.resume-button::after {
+  border-bottom: 0;
+  transform: scaleX(1);
+  opacity: 0;
+  background: black; /*var(--bg-blue-100);*/
+  border-radius: inherit;
+  height: 100%;
+  z-index: -1;
+  transition: opacity 200ms ease-in;
+}
+
+.resume-button:hover,
+.resume-button:focus-visible {
+  color: var(--bg-100);
+}
+
+.resume-button:hover::after,
+.resume-button:focus-visible::after {
+  opacity: 1;
+}
+
+/* .resume-button:active {
+  color: inherit
+} */
+
+/* Margin so main content isn't hidden behind header */
+main {
+  margin-top: 100px;
+}
+
+/* Name card */
+.name-card {
+  display: flex;
+  justify-content: center;
+  padding: 100px 0;
+}
+
+.name-card div {
+  height: min-content;
+  margin: auto 2rem;
+  width: 25%;
+}
+
+.name-card h1 {
+  font-size: 5rem;
+  line-height: 1em;
+}
+
+.name-card p {
+  font-size: 1.4rem;
+  margin-top: 2em;
+}
+
+/* About section */
+#about {
+  background: var(--bg-blue-100);
+  padding: 150px var(--side-margin);
+}
+
+#about div {
+  background-color: var(--bg-100);
+  padding: 3rem 4rem;
+}
+
+#about h2 {
+  font-weight: 400;
+}
+
+#about p {
+  margin-top: 2rem;
+}
+
+/* Education section */
+#education {
+  padding: 100px var(--side-margin) 150px;
+}
+
+#education ul {
+  margin-top: 5rem;
+}
+
+/* Coursework section*/
+.section-title-bg-image {
+  background-size: cover;
+  padding: 150px var(--side-margin);
+  box-shadow: inset 0 0 40px 0 #0003;
+  color: var(--bg-100);
+}
+
+#coursework .section-title-bg-image {
+  background-image: linear-gradient(#0005, #0005),
+    url(/bookshelf.webp);
+}
+
+#coursework ul {
+  margin: 5rem var(--side-margin) 10rem;
+}
+
+/* Courswork bullet items */
+.coursework-item {
+  grid-template-columns: 2fr 5fr;
+}
+
+.coursework-item::before {
+  content: "\f02d";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 2em;
+  position: absolute;
+  left: 0;
+}
+
+.coursework-item p {
+  /* transform: translateX(-100%); */
+  /* transform-origin: left; */
+  transition: transform 500ms ease-out
+}
+
+.coursework-item:hover p {
+  transform: translateX(50%);
+}
+
+/* list items with grid layouts inside */
+.grid-list-item {
+  position: relative;
+  list-style: none;
+  padding: 0 0 0 5em;
+  display: grid;
+  gap: 2.5em;
+  margin-top: 5em;
+}
+
+/* Experience section*/
+#experience {
+  background: var(--bg-blue-100);
+  padding: 100px var(--side-margin) 150px;
+}
+
+/* Experience bullet items */
+.experience-item {
+  grid-template-columns: 2fr 3fr 5fr;
+}
+
+.experience-item::before {
+  content: "\f072";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: var(--bg-blue-900);
+  font-size: 2em;
+  position: absolute;
+  left: 0;
+}
+
+.experience-item li {
+  margin-top: 0.5em;
+  list-style: disc inside;
+}
+
+.experience-item h3 {
+  font-weight: 100;
+}
+
+.experience-item span {
+  font-weight: 700;
+}
+
+/* Skills section */
+#skills .section-title-bg-image {
+  background-image: linear-gradient(#0007, #0007),
+    url(/design-paper.webp);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+#skills p {
+  margin-top: 2em;
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  margin-top: 100px;
+  list-style-type: none;
+  gap: 2.5em;
+  font-size: 1.5rem;
+  place-items: center;
+}
+
+/* Volunteer Section */
+#volunteer {
+  background: var(--bg-900);
+  padding: 150px var(--side-margin) 100px;
+}
+
+#volunteer h2 {
+  color: var(--bg-100);
+}
+
+#volunteer h2 + p {
+  text-align: center;
+  color: var(--bg-100);
+}
+
+.volunteer-card {
+  background: var(--bg-100);
+  list-style: none;
+  margin: 3rem;
+  padding: 4rem 10rem;
+}
+
+.volunteer-card h3,
+.volunteer-card h4 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+/* Leadership section */
+#leadership {
+  padding-top: 100px;
+}
+
+#leadership>div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 100px;
+}
+
+.leadership-card {
+  display: flex;
+  background: var(--bg-blue-100);
+}
+
+.leadership-card img {
+  width: 100%;
+}
+
+.leadership-card div {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  gap: 6rem;
+  width: max-content;
+  margin: 80px auto 50px;
+}
+
+footer div p:nth-child(1) {
+  font-weight: 600;
+  margin-bottom: .5em
+}
+
+/* Intersection Observer classes */
+.fade-in {
+  opacity: 0;
+  transition: transform 500ms ease-out, opacity 500ms ease-out;
+}
+
+.left {
+  transform: translateX(-50%)
+}
+
+.right {
+  transform: translateX(50%);
+}
+
+.appear {
+  opacity: 1;
+  transform: translate(0, 0);
+}
