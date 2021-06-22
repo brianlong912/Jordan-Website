@@ -9,6 +9,7 @@
       crossorigin="anonymous"
     ></script>
     <script defer src="observer.js"></script>
+    <script src="coursework.js"></script>
     <link rel="stylesheet" href="style.css" />
     <title>Jordan Carman</title>
   </head>
@@ -94,21 +95,19 @@
           <h2 class="section-title-bg-image">Coursework</h2>
           <div>
             <ul>
-              <li class="grid-list-item coursework-item">
+              <li class="coursework-item" onclick="showInfo(this)">
                 <h3>Aircraft Design</h3>
-                <div>
-                  <p>
-                    Senior students perform a team-based aircraft design,
-                    requiring application of the education and skills developed in
-                    the aerospace curriculum. Aircraft mission requirements
-                    include engine cycle selection and airframe/engine
-                    integration, performance, stability and control, structures,
-                    human factors, avionics, sensors, and manufacturing processes.
-                    The teams present oral and written reports on their designs.
-                  </p>
-                </div>
+                <p>
+                  Senior students perform a team-based aircraft design,
+                  requiring application of the education and skills developed in
+                  the aerospace curriculum. Aircraft mission requirements
+                  include engine cycle selection and airframe/engine
+                  integration, performance, stability and control, structures,
+                  human factors, avionics, sensors, and manufacturing processes.
+                  The teams present oral and written reports on their designs.
+                </p>
               </li>
-              <li class="grid-list-item coursework-item">
+              <li class="coursework-item" onclick="showInfo(this)">
                 <h3>Flight Dynamics & Control</h3>
                 <p>
                   Flight vehicle rigid-body equations of motion; linearization
@@ -119,7 +118,7 @@
                   flexible vehicle effects.
                 </p>
               </li>
-              <li class="grid-list-item coursework-item">
+              <li class="coursework-item" onclick="showInfo(this)">
                 <h3>Tools and Methodologies for Designing Systems</h3>
                 <p>
                   Introduction to modeling tools and methods for designing
@@ -133,7 +132,7 @@
                   the system qualification process.
                 </p>
               </li>
-              <li class="grid-list-item coursework-item">
+              <li class="coursework-item" onclick="showInfo(this)">
                 <h3>Dynamics & Vibrations</h3>
                 <p>
                   Kinematics and kinetics of particles and rigid bodies. Topics
@@ -142,7 +141,7 @@
                   vehicle dynamics.
                 </p>
               </li>
-              <li class="grid-list-item coursework-item">
+              <li class="coursework-item" onclick="showInfo(this)">
                 <h3>Control Systems Analysis</h3>
                 <p>
                   Modeling and analysis of dynamical systems with aerospace
@@ -152,7 +151,7 @@
                   analysis. Introduction to controller design.
                 </p>
               </li>
-              <li class="grid-list-item coursework-item">
+              <li class="coursework-item" onclick="showInfo(this)">
                 <h3>Air-Breathing Propulsion</h3>
                 <p>
                   Basic operating principles and analysis of performance
@@ -163,7 +162,7 @@
                   turbines. Component matching.
                 </p>
               </li>
-              <li class="grid-list-item coursework-item">
+              <li class="coursework-item" onclick="showInfo(this)">
                 <h3>Product Data Management</h3>
                 <p>
                   This course provides an understanding of the types of data
@@ -175,7 +174,7 @@
                   enterprise systems is discussed.
                 </p>
               </li>
-              <li class="grid-list-item coursework-item">
+              <li class="coursework-item" onclick="showInfo(this)">
                 <h3>Fluid Mechanics & Aerodynamics</h3>
                 <p>
                   Viscous and inviscid incompressible flow. Lift and drag in
@@ -188,7 +187,7 @@
                   applications.
                 </p>
               </li>
-              <li class="grid-list-item coursework-item">
+              <li class="coursework-item" onclick="showInfo(this)">
                 <h3>Thermodynamics I & II</h3>
                 <p>
                   First and second laws of thermodynamics, entropy, reversible
@@ -199,7 +198,7 @@
                   and refrigeration systems.
                 </p>
               </li>
-              <li class="grid-list-item coursework-item">
+              <li class="coursework-item" onclick="showInfo(this)">
                 <h3>Aerospace Systems</h3>
                 <p>
                   Aerospace system lifecycle and design process. Stakeholder
@@ -212,7 +211,7 @@
                   design project.
                 </p>
               </li>
-              <li class="grid-list-item coursework-item">
+              <li class="coursework-item" onclick="showInfo(this)">
                 <h3>Technical Writing</h3>
                 <p>
                   Workplace writing in networked environments for technical
@@ -231,7 +230,9 @@
         <h2>Experience</h2>
         <ul>
           <li class="grid-list-item experience-item fade-in">
-            <h3 class="fade-in left">Test Systems Engineering Co-op, <span>GE Aviation</span></h3>
+            <h3 class="fade-in left">
+              Test Systems Engineering Co-op, <span>GE Aviation</span>
+            </h3>
             <p class="fade-in left">January 2019 - August 2019</p>
             <p class="fade-in right">
               Supported test systems engineering aero and combustion component
@@ -245,7 +246,9 @@
             </p>
           </li>
           <li class="grid-list-item experience-item fade-in">
-            <h3 class="fade-in left">Test Systems Engineering Co-op, GE Aviation</h3>
+            <h3 class="fade-in left">
+              Test Systems Engineering Co-op, <span>GE Aviation</span>
+            </h3>
             <p class="fade-in left">January 2019 - August 2019</p>
             <p class="fade-in right">
               Supported test systems engineering aero and combustion component
@@ -259,7 +262,9 @@
             </p>
           </li>
           <li class="grid-list-item experience-item fade-in">
-            <h3 class="fade-in left">Design Engineering Co-op, <span>GE Aviation</span></h3>
+            <h3 class="fade-in left">
+              Design Engineering Co-op, <span>GE Aviation</span>
+            </h3>
             <p class="fade-in left">May 2018 - August 2018</p>
             <div class="fade-in right">
               <p>
@@ -276,7 +281,9 @@
             </div>
           </li>
           <li class="grid-list-item experience-item fade-in">
-            <h3 class="fade-in left">Lean Engineering Co-op, <span>GE Aviation</span></h3>
+            <h3 class="fade-in left">
+              Lean Engineering Co-op, <span>GE Aviation</span>
+            </h3>
             <p class="fade-in left">August 2017 - December 2017</p>
             <p class="fade-in right">
               Utilized lean to digitize standard work and standard WIP for the
@@ -288,7 +295,9 @@
             </p>
           </li>
           <li class="grid-list-item experience-item fade-in">
-            <h3 class="fade-in left">Customer Service Center Representative, <span>ITaP</span></h3>
+            <h3 class="fade-in left">
+              Customer Service Center Representative, <span>ITaP</span>
+            </h3>
             <p class="fade-in left">June 2017 - May 2018</p>
             <p class="fade-in right">
               Developed and implemented a two-factor authentication process,
@@ -371,6 +380,9 @@
           </li>
         </ul>
       </section>
+      <div class="animation-container">
+        <i class="fas fa-plane plane-animation"></i>
+      </div>
 
       <section id="leadership">
         <h2>Leadership/Organizations</h2>

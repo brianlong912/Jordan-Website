@@ -1,6 +1,5 @@
 
 const faders = document.querySelectorAll('.fade-in')
-console.log(faders);
 const opt = {rootMargin: "-200px"};
 
 const faderObserver = new IntersectionObserver(function (entries, faderObserver) {

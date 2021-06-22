@@ -16,7 +16,7 @@
 
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: arial, sans-serif;
 }
 
 h1,
@@ -68,7 +68,7 @@ header {
   top: 0;
   width: 100%;
   box-shadow: 0 -7px 20px 10px #0002;
-  z-index: 1;
+  z-index: 99;
 }
 
 nav {
@@ -157,10 +157,6 @@ nav a:focus::after {
   opacity: 1;
 }
 
-/* .resume-button:active {
-  color: inherit
-} */
-
 /* Margin so main content isn't hidden behind header */
 main {
   margin-top: 100px;
@@ -232,11 +228,44 @@ main {
 
 #coursework ul {
   margin: 5rem var(--side-margin) 10rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
 }
 
 /* Courswork bullet items */
 .coursework-item {
-  grid-template-columns: 2fr 5fr;
+  display: block;
+  padding: 2em;
+  text-align: left;
+  cursor: pointer;
+}
+
+.coursework-item.active {
+  background: #333;
+  color: white;
+  border-radius: 40px;
+}
+
+.coursework-item h3 {
+  padding: 0 0 0 4em;
+  color: currentColor;
+}
+
+.coursework-item:hover,
+.coursework-item:focus {
+  background: #333;
+  color: white;
+  border-radius: 40px;
+  outline: none;
+}
+
+.coursework-item h3 {
+  text-align: left;
+}
+
+.coursework-item span {
+  font-weight: 300;
 }
 
 .coursework-item::before {
@@ -245,17 +274,20 @@ main {
   font-weight: 900;
   font-size: 2em;
   position: absolute;
-  left: 0;
 }
 
 .coursework-item p {
-  /* transform: translateX(-100%); */
-  /* transform-origin: left; */
-  transition: transform 500ms ease-out
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 400ms ease-in-out;
 }
 
-.coursework-item:hover p {
-  transform: translateX(50%);
+.coursework-item.active p {
+  margin: 2em 1em 1em 1em;
+  max-height: none;
+  opacity: 1;
+  visibility: visible;
 }
 
 /* list items with grid layouts inside */
@@ -357,6 +389,7 @@ main {
   padding-top: 100px;
 }
 
+
 #leadership>div {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -378,6 +411,26 @@ main {
   text-align: center;
 }
 
+/* Leadership animation */
+.animation-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.plane-animation {
+  position: absolute;
+  font-size: 10rem;
+  color: purple;
+  /* transform: rotate(-135deg) translateX(-50%); */
+  
+  top: 100%;
+  left: 100%;
+  transform: translateX(-50%);
+}
+
 /* Footer */
 footer {
   display: flex;
@@ -391,7 +444,7 @@ footer div p:nth-child(1) {
   margin-bottom: .5em
 }
 
-/* Intersection Observer classes */
+/* Fade in Intersection Observer classes */
 .fade-in {
   opacity: 0;
   transition: transform 500ms ease-out, opacity 500ms ease-out;
