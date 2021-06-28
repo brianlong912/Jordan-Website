@@ -13,3 +13,19 @@ const faderObserver = new IntersectionObserver(function (entries, faderObserver)
 faders.forEach(fader => {
   faderObserver.observe(fader)
 })
+
+// const animationOpts = {threshold: ".3"}
+// const animationObserver = new IntersectionObserver(intersectingAnimation, animationOpts);
+
+// function intersectingAnimation(entries, animationObserver) {
+//   entries.forEach(entry => {
+//     if(entry.isIntersecting){
+//       console.log(document.getElementsByClassName("plane-animation"))
+//       document.getElementsByClassName("plane-animation")[0].classList.add("play")
+//       return;
+//     }
+//     document.getElementsByClassName("plane-animation")[0].classList.remove("play")
+//   })
+// }
+
+// animationObserver.observe(document.getElementById("volunteer"));

@@ -5,8 +5,12 @@
   --bg-blue-100: rgb(198, 227, 238);
   --bg-blue-900: rgb(19, 18, 73);
 
-  --side-margin: 25%;
+  --side-margin: 8%;
 }
+
+/* img {
+  max-width: 100%;
+} */
 
 *,
 *::before,
@@ -27,7 +31,6 @@ h5,
 p {
   margin: 0;
 }
-
 h2 {
   font-size: 2.4rem;
   text-align: center;
@@ -61,139 +64,29 @@ button {
   cursor: pointer;
 }
 
-/* Header and navbar */
-header {
-  position: fixed;
-  background-color: var(--bg-100);
-  top: 0;
-  width: 100%;
-  box-shadow: 0 -7px 20px 10px #0002;
-  z-index: 99;
+/* Small screens */
+
+/* Name section */
+.name-card img {
+  max-width: 100%;
+  margin: auto auto;
+  display: block;
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 1.5rem 2rem;
-}
-
-nav h3 {
-  font-size: 1.5rem;
-  font-weight: 200;
-  margin: 0;
-}
-
-nav p {
-  margin: 0;
-  font-size: 0.9rem;
-}
-
-nav ul {
-  display: flex;
-  align-items: center;
-  list-style-type: none;
-}
-
-nav li {
-  margin-right: 1em;
-}
-
-
-/* Hover animation */
-nav a::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 110%;
-  border-bottom: 2px solid black;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 200ms ease-in;
-}
-
-nav a:hover::after,
-nav a:focus::after {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
-/* anchor to Linkedin */
-.linkedin-link {
-  font-size: 2rem;
-}
-
-.linkedin-link::after {
-  border: none;
-}
-
-/* Resume button is styled differently than the rest */
-.resume-button {
-  border-radius: 100vw;
-  border: 2px solid black;
-  padding: 0.5em;
-  z-index: 1;
-}
-
-.resume-button::after {
-  border-bottom: 0;
-  transform: scaleX(1);
-  opacity: 0;
-  background: black; /*var(--bg-blue-100);*/
-  border-radius: inherit;
-  height: 100%;
-  z-index: -1;
-  transition: opacity 200ms ease-in;
-}
-
-.resume-button:hover,
-.resume-button:focus-visible {
-  color: var(--bg-100);
-}
-
-.resume-button:hover::after,
-.resume-button:focus-visible::after {
-  opacity: 1;
-}
-
-/* Margin so main content isn't hidden behind header */
-main {
-  margin-top: 100px;
-}
-
-/* Name card */
-.name-card {
-  display: flex;
-  justify-content: center;
-  padding: 100px 0;
-}
-
-.name-card div {
-  height: min-content;
-  margin: auto 2rem;
-  width: 25%;
-}
-
-.name-card h1 {
-  font-size: 5rem;
-  line-height: 1em;
-}
-
-.name-card p {
-  font-size: 1.4rem;
+.name-card > div {
+  text-align: center;
   margin-top: 2em;
 }
 
-/* About section */
 #about {
+  margin-top: 3em;
   background: var(--bg-blue-100);
-  padding: 150px var(--side-margin);
+  padding: 80px var(--side-margin);
 }
 
-#about div {
-  background-color: var(--bg-100);
-  padding: 3rem 4rem;
+#about > div {
+  background: var(--bg-100);
+  padding: 2.5em;
 }
 
 #about h2 {
@@ -204,39 +97,36 @@ main {
   margin-top: 2rem;
 }
 
-/* Education section */
+/* Education */
 #education {
-  padding: 100px var(--side-margin) 150px;
+  padding: 50px var(--side-margin) 80px;
 }
 
 #education ul {
-  margin-top: 5rem;
+  margin-top: 4rem;
 }
 
 /* Coursework section*/
 .section-title-bg-image {
   background-size: cover;
-  padding: 150px var(--side-margin);
+  padding: 70px var(--side-margin);
   box-shadow: inset 0 0 40px 0 #0003;
   color: var(--bg-100);
 }
 
 #coursework .section-title-bg-image {
-  background-image: linear-gradient(#0005, #0005),
-    url(/bookshelf.webp);
+  background-image: linear-gradient(#0005, #0005), url(/bookshelf.webp);
 }
 
 #coursework ul {
-  margin: 5rem var(--side-margin) 10rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1em;
+  margin: 60px var(--side-margin) 80px;
 }
 
 /* Courswork bullet items */
 .coursework-item {
   display: block;
-  padding: 2em;
+  padding: 1.2em;
+  margin-top: 0.4em;
   text-align: left;
   cursor: pointer;
 }
@@ -244,35 +134,26 @@ main {
 .coursework-item.active {
   background: #333;
   color: white;
-  border-radius: 40px;
+  border-radius: 30px;
 }
 
 .coursework-item h3 {
-  padding: 0 0 0 4em;
-  color: currentColor;
+  padding: 0 0 0 2.5em;
 }
 
 .coursework-item:hover,
 .coursework-item:focus {
   background: #333;
   color: white;
-  border-radius: 40px;
+  border-radius: 30px;
   outline: none;
-}
-
-.coursework-item h3 {
-  text-align: left;
-}
-
-.coursework-item span {
-  font-weight: 300;
 }
 
 .coursework-item::before {
   content: "\f02d";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  font-size: 2em;
+  font-size: 1.5em;
   position: absolute;
 }
 
@@ -290,25 +171,11 @@ main {
   visibility: visible;
 }
 
-/* list items with grid layouts inside */
-.grid-list-item {
-  position: relative;
-  list-style: none;
-  padding: 0 0 0 5em;
-  display: grid;
-  gap: 2.5em;
-  margin-top: 5em;
-}
-
-/* Experience section*/
+/* Experience section */
 #experience {
   background: var(--bg-blue-100);
-  padding: 100px var(--side-margin) 150px;
-}
-
-/* Experience bullet items */
-.experience-item {
-  grid-template-columns: 2fr 3fr 5fr;
+  padding: 80px var(--side-margin) 100px;
+  overflow: hidden;
 }
 
 .experience-item::before {
@@ -316,7 +183,7 @@ main {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   color: var(--bg-blue-900);
-  font-size: 2em;
+  font-size: 1.8em;
   position: absolute;
   left: 0;
 }
@@ -330,14 +197,30 @@ main {
   font-weight: 100;
 }
 
+.experience-item p {
+  margin-top: 1em;
+}
+
+.experience-item p:first-of-type {
+  font-size: 1.1rem;
+  margin-top: 0;
+}
+
 .experience-item span {
   font-weight: 700;
 }
 
+/* list items with grid layouts inside */
+.grid-list-item {
+  position: relative;
+  list-style: none;
+  padding: 0 0 0 3.6em;
+  margin-top: 2.5em;
+}
+
 /* Skills section */
 #skills .section-title-bg-image {
-  background-image: linear-gradient(#0007, #0007),
-    url(/design-paper.webp);
+  background-image: linear-gradient(#0007, #0007), url(/design-paper.webp);
   font-weight: 700;
   font-size: 1.2rem;
 }
@@ -359,23 +242,24 @@ main {
 /* Volunteer Section */
 #volunteer {
   background: var(--bg-900);
-  padding: 150px var(--side-margin) 100px;
-}
-
-#volunteer h2 {
+  padding: 80px var(--side-margin) 100px;
   color: var(--bg-100);
 }
 
 #volunteer h2 + p {
   text-align: center;
-  color: var(--bg-100);
+}
+
+#volunteer ul {
+  margin-top: 3rem;
 }
 
 .volunteer-card {
   background: var(--bg-100);
+  color: black;
   list-style: none;
-  margin: 3rem;
-  padding: 4rem 10rem;
+  margin: 2rem 0;
+  padding: 2rem;
 }
 
 .volunteer-card h3,
@@ -386,14 +270,11 @@ main {
 
 /* Leadership section */
 #leadership {
-  padding-top: 100px;
+  padding-top: 80px;
 }
 
-
-#leadership>div {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin-top: 100px;
+#leadership > div {
+  margin-top: 50px;
 }
 
 .leadership-card {
@@ -411,54 +292,338 @@ main {
   text-align: center;
 }
 
-/* Leadership animation */
-.animation-container {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-.plane-animation {
-  position: absolute;
-  font-size: 10rem;
-  color: purple;
-  /* transform: rotate(-135deg) translateX(-50%); */
-  
-  top: 100%;
-  left: 100%;
-  transform: translateX(-50%);
-}
-
 /* Footer */
 footer {
   display: flex;
-  gap: 6rem;
-  width: max-content;
-  margin: 80px auto 50px;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem 10%;
+  margin: 50px var(--side-margin);
 }
 
 footer div p:nth-child(1) {
   font-weight: 600;
-  margin-bottom: .5em
+  margin-bottom: 0.5em;
 }
 
-/* Fade in Intersection Observer classes */
-.fade-in {
-  opacity: 0;
-  transition: transform 500ms ease-out, opacity 500ms ease-out;
+/* Order of elements for small screens in leadership section */
+@media (max-width: 900px) {
+  .leadership-card:nth-child(2) > img,
+  .leadership-card:nth-child(4) > img {
+    order: 1;
+  }
+
+  footer h3 {
+    width: 100%;
+    text-align: center;
+  }
 }
 
-.left {
-  transform: translateX(-50%)
+/* Full sized screens */
+@media (min-width: 900px) {
+  :root {
+    --side-margin: 12%;
+  }
+
+  /* Header and navbar */
+  header {
+    position: fixed;
+    background-color: var(--bg-100);
+    top: 0;
+    width: 100%;
+    box-shadow: 0 -7px 20px 10px #0002;
+    z-index: 99;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+  }
+
+  nav h3 {
+    font-size: 1.5rem;
+    font-weight: 200;
+    margin: 0;
+  }
+
+  nav p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  nav ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+  }
+
+  nav li {
+    margin-right: 1em;
+  }
+
+  /* Hover animation */
+  nav a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110%;
+    border-bottom: 2px solid black;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 200ms ease-in;
+  }
+
+  nav a:hover::after,
+  nav a:focus::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  /* anchor to Linkedin */
+  .linkedin-link {
+    font-size: 2rem;
+  }
+
+  .linkedin-link::after {
+    border: none;
+  }
+
+  /* Resume button is styled differently than the rest */
+  .resume-button {
+    border-radius: 100vw;
+    border: 2px solid black;
+    padding: 0.5em;
+    z-index: 1;
+  }
+
+  .resume-button::after {
+    border-bottom: 0;
+    transform: scaleX(1);
+    opacity: 0;
+    background: black; /*var(--bg-blue-100);*/
+    border-radius: inherit;
+    height: 100%;
+    z-index: -1;
+    transition: opacity 200ms ease-in;
+  }
+
+  .resume-button:hover,
+  .resume-button:focus-visible {
+    color: var(--bg-100);
+  }
+
+  .resume-button:hover::after,
+  .resume-button:focus-visible::after {
+    opacity: 1;
+  }
+
+  /* Margin so main content isn't hidden behind header */
+  main {
+    margin-top: 100px;
+  }
+
+  /* Name card */
+  .name-card {
+    display: flex;
+    justify-content: center;
+    padding: 100px 0;
+  }
+
+  .name-card img {
+    margin: 0;
+  }
+
+  .name-card div {
+    height: min-content;
+    margin: auto 2rem;
+    width: 25%;
+  }
+
+  .name-card h1 {
+    font-size: 5rem;
+    line-height: 1em;
+  }
+
+  .name-card p {
+    font-size: 1.4rem;
+    margin-top: 2em;
+  }
+
+  /* About section */
+  #about {
+    padding: 150px var(--side-margin);
+  }
+
+  #about div {
+    padding: 3rem 4rem;
+  }
+
+  /* Education section */
+  #education {
+    padding: 100px var(--side-margin) 150px;
+  }
+
+  #education ul {
+    margin-top: 5rem;
+  }
+
+  /* Coursework section*/
+  .section-title-bg-image {
+    padding: 150px var(--side-margin);
+  }
+
+  #coursework ul {
+    margin: 5rem var(--side-margin) 10rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+  }
+
+  /* Courswork bullet items */
+  .coursework-item {
+    display: block;
+    padding: 2em;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .coursework-item:hover,
+  .coursework-item:focus {
+    border-radius: 40px;
+  }
+
+  .coursework-item.active {
+    border-radius: 40px;
+  }
+
+  .coursework-item h3 {
+    padding: 0 0 0 4em;
+  }
+
+  .coursework-item::before {
+    font-size: 2em;
+  }
+
+  /* list items with grid layouts inside */
+  .grid-list-item {
+    display: grid;
+    gap: 2.5em;
+    padding: 0 0 0 5em;
+    margin-top: 5em;
+  }
+
+  /* Experience section*/
+
+  /* Experience bullet items */
+  .experience-item {
+    grid-template-columns: 2fr 3fr 5fr;
+  }
+
+  .experience-item::before {
+    font-size: 2em;
+  }
+
+  .experience-item p {
+    margin: 0;
+  }
+
+  .experience-item p:first-of-type {
+    font-size: 1rem;
+  }
+
+  /* Volunteer Section */
+  #volunteer {
+    padding: 150px var(--side-margin) 100px;
+  }
+
+  .volunteer-card {
+    margin: 3rem;
+    padding: 4rem 10rem;
+  }
+
+  /* Leadership section */
+  #leadership {
+    padding-top: 100px;
+  }
+
+  #leadership > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 50px;
+  }
+
+  /* .leadership-card:nth-child(2) > img {
+    order: 0;
+  } */
+
+  .leadership-card:nth-child(3) > img,
+  .leadership-card:nth-child(4) > img {
+    order: 1;
+  }
+
+  /* Leadership animation */
+  .animation-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .plane-animation {
+    position: absolute;
+    font-size: 10rem;
+    color: purple;
+    transform: translate(0, -100%) rotate(-135deg);
+
+    top: 100%;
+    left: 100%;
+  }
+
+  .play {
+    animation: planeAnimation 2s ease-in-out forwards;
+  }
+
+  @keyframes planeAnimation {
+    from {
+    }
+    to {
+      top: 0;
+      left: 0;
+      transform: translate(-100%, 100%) rotate(-135deg);
+    }
+  }
+
+  /* Footer */
+  footer {
+    gap: 6rem;
+  }
+
+  /* Fade in Intersection Observer classes */
+  .fade-in {
+    opacity: 0;
+    transition: transform 500ms ease-out, opacity 500ms ease-out;
+  }
+
+  .left {
+    transform: translateX(-50%);
+  }
+
+  .right {
+    transform: translateX(50%);
+  }
+
+  .appear {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
 }
 
-.right {
-  transform: translateX(50%);
-}
-
-.appear {
-  opacity: 1;
-  transform: translate(0, 0);
+@media (min-width: 1400px) {
+  :root {
+    --side-margin: 25%;
+  }
 }
