@@ -96,7 +96,7 @@ nav button {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  padding: 1em .5em;
+  padding: 1em 0.5em;
   z-index: 99;
 }
 
@@ -116,7 +116,7 @@ nav button {
 
 .nav-open-close-button::before,
 .nav-open-close-button::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
 }
@@ -131,20 +131,49 @@ nav button {
   transition: transform 300ms ease-in, bottom 100ms 300ms linear;
 }
 
-.nav-open + button>.nav-open-close-button {
+.nav-open + button > .nav-open-close-button {
   transform: rotate(45deg);
   transition: transform 300ms 100ms ease-out;
 }
 
-.nav-open + button>.nav-open-close-button::after {
+.nav-open + button > .nav-open-close-button::after {
   transform: rotate(-90deg);
   bottom: 0;
   transition: bottom 100ms linear, transform 300ms 100ms ease-out;
 }
 
-.nav-open + button>.nav-open-close-button::before {
+.nav-open + button > .nav-open-close-button::before {
   top: 0;
   transition: top 100ms linear;
+}
+
+/* Hover animation */
+nav a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
+  border-bottom: 2px solid currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 200ms ease-in;
+}
+
+nav a:hover::after,
+nav a:focus::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* anchor to Linkedin */
+.linkedin-link {
+  font-size: 2rem;
+}
+
+.linkedin-link::after {
+  border: none;
 }
 
 /* Resume button is styled differently than the rest */
@@ -225,7 +254,7 @@ nav button {
 }
 
 #coursework .section-title-bg-image {
-  background-image: linear-gradient(#0005, #0005), url(/bookshelf.webp);
+  background-image: linear-gradient(#0005, #0005), url(/assets/bookshelf.webp);
 }
 
 #coursework ul {
@@ -330,7 +359,7 @@ nav button {
 
 /* Skills section */
 #skills .section-title-bg-image {
-  background-image: linear-gradient(#0007, #0007), url(/design-paper.webp);
+  background-image: linear-gradient(#0007, #0007), url(/assets/design-paper.webp);
   font-weight: 700;
   font-size: 1.2rem;
 }
@@ -476,64 +505,6 @@ footer div p:nth-child(1) {
 
   nav li {
     margin-right: 1em;
-  }
-
-  /* Hover animation */
-  nav a::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 110%;
-    border-bottom: 2px solid black;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 200ms ease-in;
-  }
-
-  nav a:hover::after,
-  nav a:focus::after {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-
-  /* anchor to Linkedin */
-  .linkedin-link {
-    font-size: 2rem;
-  }
-
-  .linkedin-link::after {
-    border: none;
-  }
-
-  /* Resume button is styled differently than the rest */
-  .resume-button {
-    border-radius: 100vw;
-    border: 2px solid black;
-    padding: 0.5em;
-    z-index: 1;
-  }
-
-  .resume-button::after {
-    border-bottom: 0;
-    transform: scaleX(1);
-    opacity: 0;
-    background: black; /*var(--bg-blue-100);*/
-    border-radius: inherit;
-    height: 100%;
-    z-index: -1;
-    transition: opacity 200ms ease-in;
-  }
-
-  .resume-button:hover,
-  .resume-button:focus-visible {
-    color: var(--bg-100);
-  }
-
-  .resume-button:hover::after,
-  .resume-button:focus-visible::after {
-    opacity: 1;
   }
 
   /* Margin so main content isn't hidden behind header */
