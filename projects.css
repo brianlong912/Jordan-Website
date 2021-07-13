@@ -1,0 +1,36 @@
+.page-title {
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+  background: black;
+  color: white;
+}
+
+.page-title h4 {
+  text-align: center;
+  margin: .5rem 0;
+  font-weight: 400;
+}
+
+.project-card {
+  padding: 0 var(--side-margin);
+  margin-bottom: 5rem;
+}
+
+.project-section {
+  margin-bottom: 1rem;
+}
+
+.project-section img {
+  width: 100%;
+  max-height: 60vh;
+  object-fit: cover;
+}
+
+.project-section h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.project-dates {
+  margin-bottom: 1rem;
+}
