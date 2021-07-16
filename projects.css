@@ -50,14 +50,18 @@ main {
 
   .project-card {
     display: flex;
+    max-height: 60vh;
     gap: 1rem;
     margin-bottom: 0;
-    min-height: 50vh;
+    isolation: isolate;
+  }
+
+  .project-card.active {
+    max-height: none;
   }
 
   /* Alternating image on the left and right */
-  :is(.project-card:nth-child(3), .project-card:nth-child(5), .project-card:nth-child(7))
-    .project-info {
+  :is(div.project-card:nth-child(odd)) .project-info {
     order: 1;
   }
 
@@ -66,12 +70,69 @@ main {
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
   }
 
   .project-info {
+    position: relative;
     padding: 6rem 6%;
     flex-basis: 110%;
+    background: linear-gradient(to top, #0000 4rem, #000 20rem);
+    background-clip: text;
+    color: transparent;
+    overflow: hidden;
+  }
+
+  .project-card.active .project-info {
+    color: inherit;
+    background: none;
+  }
+
+  .project-info::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: white;
+    z-index: -1;
+  }
+
+  .project-card button {
+    --rotation: 30deg;
+    --transition-speed: 300ms;
+    --transition-timing: ease-out;
+    position:absolute;
+    bottom: 2rem;
+    left: 50%;
+    width: 3rem;
+    height: 3rem;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    /* background: #999 */
+  }
+
+  .project-card button > div,
+  .project-card button > div::after {
+    position: absolute;
+    width: 1.75rem;
+    height: .375rem;
+    background: black;
+    border-radius: 100px;
+  }
+
+  .project-card button > div {
+    transform: rotate(var(--rotation));
+    transition: transform var(--transition-speed) var(--transition-timing);
+  }
+
+  .project-card button > div::after {
+    content: '';
+    left: 90%;
+    transform: rotate(calc(-2*var(--rotation)));
+    transform-origin: 5%;
+    transition: transform var(--transition-speed) var(--transition-timing);
+  }
+
+  .project-card.active button {
+    --rotation: -30deg;
   }
 
   .project-section img {
@@ -82,7 +143,7 @@ main {
 
 @media (min-width: 1400px) {
   .project-info {
-    padding: 6rem 12%;
-    flex-basis: 150%;
+    padding: 6rem 15%;
+    flex-basis: 120%;
   }
 }

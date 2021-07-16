@@ -9,7 +9,7 @@
       crossorigin="anonymous"
     ></script>
     <script defer src="observer.js"></script>
-    <script src="coursework.js"></script>
+    <script src="showInfo.js"></script>
     <script src="nav.js"></script>
     <link rel="stylesheet" href="index.css" />
     <title>Jordan Carman</title>
@@ -99,7 +99,7 @@
           <h2 class="section-title-bg-image">Coursework</h2>
           <div>
             <ul>
-              <li class="coursework-item" onclick="showInfo(this)">
+              <button class="coursework-item" onclick="showInfo(this)" aria-label="Show Information about the course">
                 <h3>Aircraft Design</h3>
                 <p>
                   Senior students perform a team-based aircraft design,
@@ -110,8 +110,8 @@
                   human factors, avionics, sensors, and manufacturing processes.
                   The teams present oral and written reports on their designs.
                 </p>
-              </li>
-              <li class="coursework-item" onclick="showInfo(this)">
+              </button>
+              <button class="coursework-item" onclick="showInfo(this)" aria-label="Show Information about the course">
                 <h3>Flight Dynamics & Control</h3>
                 <p>
                   Flight vehicle rigid-body equations of motion; linearization
@@ -121,8 +121,8 @@
                   augmentation, aircraft handling qualities. Introduction to
                   flexible vehicle effects.
                 </p>
-              </li>
-              <li class="coursework-item" onclick="showInfo(this)">
+              </button>
+              <button class="coursework-item" onclick="showInfo(this)" aria-label="Show Information about the course">
                 <h3>Tools and Methodologies for Designing Systems</h3>
                 <p>
                   Introduction to modeling tools and methods for designing
@@ -135,8 +135,8 @@
                   the trade-offs between alternative architectures; and defining
                   the system qualification process.
                 </p>
-              </li>
-              <li class="coursework-item" onclick="showInfo(this)">
+              </button>
+              <button class="coursework-item" onclick="showInfo(this)" aria-label="Show Information about the course">
                 <h3>Dynamics & Vibrations</h3>
                 <p>
                   Kinematics and kinetics of particles and rigid bodies. Topics
@@ -144,8 +144,8 @@
                   Euler’s equations of motion, Eulerian angles, and aerospace
                   vehicle dynamics.
                 </p>
-              </li>
-              <li class="coursework-item" onclick="showInfo(this)">
+              </button>
+              <button class="coursework-item" onclick="showInfo(this)" aria-label="Show Information about the course">
                 <h3>Control Systems Analysis</h3>
                 <p>
                   Modeling and analysis of dynamical systems with aerospace
@@ -154,8 +154,8 @@
                   systems. Root Locus, Bode, Nyquist methods for control systems
                   analysis. Introduction to controller design.
                 </p>
-              </li>
-              <li class="coursework-item" onclick="showInfo(this)">
+              </button>
+              <button class="coursework-item" onclick="showInfo(this)" aria-label="Show Information about the course">
                 <h3>Air-Breathing Propulsion</h3>
                 <p>
                   Basic operating principles and analysis of performance
@@ -165,8 +165,8 @@
                   flow through inlets, combustors, nozzles, compressors, and
                   turbines. Component matching.
                 </p>
-              </li>
-              <li class="coursework-item" onclick="showInfo(this)">
+              </button>
+              <button class="coursework-item" onclick="showInfo(this)" aria-label="Show Information about the course">
                 <h3>Product Data Management</h3>
                 <p>
                   This course provides an understanding of the types of data
@@ -177,8 +177,8 @@
                   implementation activities. Interaction between various
                   enterprise systems is discussed.
                 </p>
-              </li>
-              <li class="coursework-item" onclick="showInfo(this)">
+              </button>
+              <button class="coursework-item" onclick="showInfo(this)" aria-label="Show information about the course">
                 <h3>Fluid Mechanics & Aerodynamics</h3>
                 <p>
                   Viscous and inviscid incompressible flow. Lift and drag in
@@ -190,8 +190,8 @@
                   waves. Perturbation theory for wings and bodies. Design
                   applications.
                 </p>
-              </li>
-              <li class="coursework-item" onclick="showInfo(this)">
+              </button>
+              <button class="coursework-item" onclick="showInfo(this)" aria-label="Show Information about the course">
                 <h3>Thermodynamics I & II</h3>
                 <p>
                   First and second laws of thermodynamics, entropy, reversible
@@ -201,8 +201,8 @@
                   combustion processes, equilibrium. Energy conversion, power,
                   and refrigeration systems.
                 </p>
-              </li>
-              <li class="coursework-item" onclick="showInfo(this)">
+              </button>
+              <button class="coursework-item" onclick="showInfo(this)" aria-label="Show Information about the course">
                 <h3>Aerospace Systems</h3>
                 <p>
                   Aerospace system lifecycle and design process. Stakeholder
@@ -214,8 +214,8 @@
                   contexts. Application of these techniques to a team semester
                   design project.
                 </p>
-              </li>
-              <li class="coursework-item" onclick="showInfo(this)">
+              </button>
+              <button class="coursework-item" onclick="showInfo(this)" aria-label="Show Information about the course">
                 <h3>Technical Writing</h3>
                 <p>
                   Workplace writing in networked environments for technical
@@ -224,7 +224,7 @@
                   usability, ethics, research, team writing. Typical genres
                   include technical reports, memos, documentation, Web sites.
                 </p>
-              </li>
+              </button>
             </ul>
           </div>
         </div>

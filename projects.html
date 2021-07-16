@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="projects.css" />
     <script src="nav.js"></script>
+    <script src="showInfo.js"></script>
     <title>Projects | Jordan Carman</title>
-  </head> 
+  </head>
   <body>
     <header>
       <nav>
@@ -60,17 +61,26 @@
             Dates: January 2020 - May 2020 Team Leader, A+
           </p>
           <p class="project-description">
-            We were provided a LEGO<sup>&reg;</sup> package with parts to create three
-            different assemblies. As a group, we created ID numbers for each
-            item in the LEGO<sup>&reg;</sup> package provided and in-process assemblies. We
-            then used Teamcenter to upload the items with their names, ID's, and
-            pictures. We created an Engineering Bill of Material (EBOM) for each
-            toy assembled. We were able to identify items common to each toy,
-            items unique, and many other facts required. We then presented our
-            process and findings to the customer accordingly.
+            We were provided a LEGO<sup>&reg;</sup> package with parts to create
+            three different assemblies. As a group, we created ID numbers for
+            each item in the LEGO<sup>&reg;</sup> package provided and
+            in-process assemblies. We then used Teamcenter to upload the items
+            with their names, ID's, and pictures. We created an Engineering Bill
+            of Material (EBOM) for each toy assembled. We were able to identify
+            items common to each toy, items unique, and many other facts
+            required. We then presented our process and findings to the customer
+            accordingly.
           </p>
+          <button onclick="showInfo(this.parentElement.parentElement)">
+            <div></div>
+          </button>
         </div>
-        <div class="project-section"><img src="assets/legos.webp" alt="Image of blue lego blocks in a jumble" /></div>
+        <div class="project-section">
+          <img
+            src="assets/legos.webp"
+            alt="Image of blue lego blocks in a jumble"
+          />
+        </div>
       </div>
       <div class="project-card">
         <div class="project-section project-info">
@@ -97,8 +107,16 @@
             has been and will be able to be used for any test, component or full
             engine.
           </p>
+          <button onclick="showInfo(this.parentElement.parentElement)">
+            <div></div>
+          </button>
         </div>
-        <div class="project-section"><img src="assets/engineering diagram.webp" alt="Image of generic engineering diagram" /></div>
+        <div class="project-section">
+          <img
+            src="assets/engineering diagram.webp"
+            alt="Image of generic engineering diagram"
+          />
+        </div>
       </div>
       <div class="project-card">
         <div class="project-section project-info">
@@ -123,8 +141,16 @@
             consisting of dyes, dispersants and flow sensors will help identify,
             counter, and prevent oil spills.
           </p>
+          <button onclick="showInfo(this.parentElement.parentElement)">
+            <div></div>
+          </button>
         </div>
-        <div class="project-section"><img src="assets/oil_spill.webp" alt="Image of an oil spill in the ocean" /></div>
+        <div class="project-section">
+          <img
+            src="assets/oil_spill.webp"
+            alt="Image of an oil spill in the ocean"
+          />
+        </div>
       </div>
       <div class="project-card">
         <div class="project-section project-info">
@@ -153,8 +179,13 @@
             directly impacted the root cause analysis and allowed for a
             short-term field containment design change to be identified.
           </p>
+          <button onclick="showInfo(this.parentElement.parentElement)">
+            <div></div>
+          </button>
         </div>
-        <div class="project-section"><img src="assets/wrench.webp" alt="Image of a wrench" /></div>
+        <div class="project-section">
+          <img src="assets/wrench.webp" alt="Image of a wrench" />
+        </div>
       </div>
       <div class="project-card">
         <div class="project-section project-info">
@@ -189,8 +220,13 @@
             new proposed aircraft would be a compelling replacement for the
             A-10.
           </p>
+          <button onclick="showInfo(this.parentElement.parentElement)">
+            <div></div>
+          </button>
         </div>
-        <div class="project-section"><img src="assets/A10.webp" alt="Image of a fighter jet" /></div>
+        <div class="project-section">
+          <img src="assets/A10.webp" alt="Image of a fighter jet" />
+        </div>
       </div>
       <div class="project-card">
         <div class="project-section project-info">
@@ -204,8 +240,16 @@
             This model had 9 unique parts which demonstrated my abilities
             learned in this course to use CATIA.
           </p>
+          <button onclick="showInfo(this.parentElement.parentElement)">
+            <div></div>
+          </button>
         </div>
-        <div class="project-section"><img src="assets/compass_diagram.webp" alt="Image of generic engineering diagram" /></div>
+        <div class="project-section">
+          <img
+            src="assets/compass_diagram.webp"
+            alt="Image of generic engineering diagram"
+          />
+        </div>
       </div>
       <div class="project-card">
         <div class="project-section project-info">
@@ -231,8 +275,13 @@
             coaches would audit these processes based on the standard work in
             order to track delays and quickly identify problems.
           </p>
+          <button onclick="showInfo(this.parentElement.parentElement)">
+            <div></div>
+          </button>
         </div>
-        <div class="project-section"><img src="assets/welding.webp" alt="Image of a man welding" /></div>
+        <div class="project-section">
+          <img src="assets/welding.webp" alt="Image of a man welding" />
+        </div>
       </div>
     </main>
   </body>
